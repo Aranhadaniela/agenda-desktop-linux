@@ -1,0 +1,53 @@
+# Dados privados: qualquer exportação JSON é privada por padrão.
+# Exemplos públicos devem ficar em Markdown; não adicionar exceções com dados reais.
+*.json
+*.json.*
+backup/
+.env
+.env.*
+*.env
+*.local
+*.local.*
+/config/*
+
+# Credenciais e estado de ferramentas locais
+.aws/
+.codex/
+.agents/
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*
+secrets*
+
+# Python, ambientes e empacotamento
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.coverage
+.coverage.*
+htmlcov/
+
+# Temporários e logs (podem conter eventos ou caminhos privados)
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*~
+.cache/
+
+# Editores e sistema
+.vscode/
+.idea/
+.DS_Store
