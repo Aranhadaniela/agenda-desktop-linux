@@ -1,0 +1,7 @@
+{
+  "uuid": "agenda-desktop-linux-desktop-prototype@extensions.local",
+  "name": "Agenda Desktop Linux — protótipo de camada",
+  "description": "Investigação GNOME 46: widget passivo no fundo, somente dados sintéticos",
+  "shell-version": ["46"],
+  "version": 1
+}

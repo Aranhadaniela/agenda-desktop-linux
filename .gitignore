@@ -51,3 +51,8 @@ htmlcov/
 .vscode/
 .idea/
 .DS_Store
+
+# Metadados públicos da extensão; única exceção ao bloqueio de JSON.
+!/desktop/gnome/metadata.json
+# Metadado público do protótipo isolado; nunca contém eventos.
+!/desktop/gnome/prototype-desktop/metadata.json

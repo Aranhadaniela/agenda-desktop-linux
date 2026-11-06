@@ -1,0 +1,8 @@
+{
+  "uuid": "agenda-desktop-linux@extensions.local",
+  "name": "Agenda Desktop Linux",
+  "description": "Eventos de hoje e amanhã pelo Core Python compartilhado",
+  "shell-version": ["46"],
+  "version": 1,
+  "version-name": "0.1.0"
+}

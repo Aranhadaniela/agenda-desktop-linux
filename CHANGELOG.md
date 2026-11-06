@@ -10,4 +10,4 @@
 - 15 testes automatizados e documentação de segurança, dependências e publicação.
 - Licença MIT, Copyright (c) 2026 agenda-desktop-linux.
 
-Não inclui adaptadores distribuíveis para GNOME Shell, KDE Plasma ou Cinnamon. Limitações e pendências de segurança estão no relatório de prontidão. Não há instalador ou pacote PyPI nesta versão.
+Etapa 4.1 (em validação): pacote experimental GNOME Shell 46 com Core compartilhado, cache privado e instalador opt-in. Ainda requer validação visual. KDE Plasma e Cinnamon não estão implementados. Limitações e pendências de segurança estão no relatório de prontidão. Não há instalador ou pacote PyPI nesta versão.

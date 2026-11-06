@@ -11,7 +11,15 @@ Referência oficial: [Evolution Data Server](https://gnome.pages.gitlab.gnome.or
 ## Próximas validações
 
 - Integração manual com sessão EDS e calendários de teste, incluindo recorrências, exceções e horários flutuantes em consultas que cruzam meia-noite.
-- Adaptadores para GNOME, KDE Plasma e Cinnamon, sem duplicar o Core.
+- Validar o [adaptador GNOME 46 experimental](gnome-integration.md). KDE Plasma e Cinnamon continuam planejados.
 - Empacotamento e instalação; licença MIT definida para os fontes da v0.1.0.
 
 Os testes com bindings reais validam conversões de datas, mas a conexão e os callbacks são simulados. Não certificam comportamento ponta a ponta do servidor nem dos desktops.
+
+## Adapter GNOME
+
+A extensão ESM usa o Core copiado por uma lista fechada no empacotamento, sem alterar sua implementação. O adapter Python adiciona seleção privada, cache XDG e lock; o JSON conserva o mesmo contrato. Veja `gnome-integration.md` para instalação opt-in e limites.
+
+## Direcionamento desktop (Etapa 4.3)
+
+O produto é um widget atrás das janelas, não um menu de painel. Um protótipo sintético isolado investiga o grupo de fundo privado do GNOME 46; não altera o Core ou o adapter existente. Veja [decisões, limites e validação visual](gnome-desktop-prototype.md).

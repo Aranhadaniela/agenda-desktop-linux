@@ -1,6 +1,6 @@
 # Agenda Desktop Linux
 
-Versão em preparação: **v0.1.0**. Core Python para consultar calendários do Evolution Data Server (EDS) e exportar eventos em JSON. Nenhuma release foi publicada.
+Versão em preparação: **v0.1.0**. Widget de calendário fixado na área de trabalho, com Core Python para consultar calendários do Evolution Data Server (EDS) e exportar eventos em JSON. Janelas normais devem ficar à frente da agenda; menu de painel não substitui essa experiência. Nenhuma release foi publicada.
 
 ## Estado do projeto
 
@@ -8,7 +8,7 @@ Versão em preparação: **v0.1.0**. Core Python para consultar calendários do 
 | --- | --- |
 | Core e CLI Python | Implementados, com testes automatizados |
 | Evolution Data Server | Descoberta, seleção e consulta implementadas; testes de conexão usam mocks |
-| GNOME Shell | Adaptador não incluído nesta versão; eventual extensão local não faz parte da distribuição |
+| GNOME Shell 46 | Adaptador experimental preparado na Etapa 4.1; instalação e validação visual pendentes. A extensão local anterior não faz parte da distribuição |
 | KDE Plasma | Planejado, não implementado |
 | Cinnamon | Planejado, não implementado |
 
@@ -56,7 +56,7 @@ Execute a partir da pasta do projeto com `/usr/bin/python3`, que precisa enxerga
 
 A janela começa à meia-noite local de hoje e termina à meia-noite após N dias; inclui eventos anteriores ao horário atual de hoje. O EDS expande recorrências. O JSON mantém `eventos`, `titulo`, `inicio`, `fim` e `dia_inteiro`; veja o [contrato](docs/json-format.md).
 
-A saída substitui um arquivo existente de forma atômica e recebe permissão 0600. Escolha um diretório privado controlado pelo usuário. Não execute como root. Todos os JSONs são ignorados pelo Git por padrão, mas isso não impede upload manual nem inclusão forçada. O projeto não tem telemetria ou upload próprio; o EDS pode sincronizar fontes remotas já configuradas ao ser consultado.
+A saída substitui um arquivo existente de forma atômica e recebe permissão 0600. Escolha um diretório privado controlado pelo usuário. Não execute como root. JSONs de eventos são ignorados pelo Git; a única exceção é o metadado público `desktop/gnome/metadata.json`, mas isso não impede upload manual nem inclusão forçada. O projeto não tem telemetria ou upload próprio; o EDS pode sincronizar fontes remotas já configuradas ao ser consultado.
 
 ## Testes e documentação
 
@@ -64,8 +64,11 @@ A saída substitui um arquivo existente de forma atômica e recebe permissão 06
 /usr/bin/python3 -m unittest discover -s tests -v
 ```
 
-Os 15 testes usam eventos sintéticos, temporários e mocks de conexão EDS. Os testes de conversão usam bindings reais; testes específicos do provider são ignorados quando eles não estão disponíveis. Não há validação automática ponta a ponta dos desktops ou do servidor.
+Os testes usam eventos sintéticos, temporários e mocks de conexão EDS. A Etapa 4.1 acrescenta testes de pacote/cache GNOME e testes de datas em GJS. Os testes de conversão usam bindings reais; testes específicos do provider são ignorados quando eles não estão disponíveis. Não há validação automática ponta a ponta dos desktops ou do servidor.
 
+- [Roteiro de validação visual na VM — Etapa 4.4](docs/gnome-visual-test-4.4.md)
+- [Investigação do widget na camada de desktop — Etapa 4.3](docs/gnome-desktop-prototype.md)
+- [Integração GNOME 46](docs/gnome-integration.md) e [validação isolada com dados sintéticos](docs/gnome-validation.md)
 - [Arquitetura](docs/architecture.md) e [contribuições](CONTRIBUTING.md)
 - [Dependências e avisos de segurança](docs/dependencies.md)
 - [Segurança e privacidade](SECURITY.md) e [auditoria inicial](docs/security-audit.md)
